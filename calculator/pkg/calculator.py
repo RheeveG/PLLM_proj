@@ -59,3 +59,8 @@ class Calculator:
         b = values.pop()
         a = values.pop()
         values.append(self.operators[operator](a, b))
+
+    def add_numbers(self, numbers):
+        if not all(isinstance(n, (int, float)) for n in numbers):
+            raise ValueError("All elements in 'numbers' must be numbers.")
+        return sum(numbers)
